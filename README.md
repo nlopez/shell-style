@@ -91,7 +91,7 @@ See this blog post: [How "Exit Traps" Can Make Your Bash Scripts Way More Robust
 Read sensitive data and credentials from environment variables, or config files pointed to by environment variables, whenever possible.
 
 ## Use long options
-In scripts, if a command has short and long options, such as -s versus --silent, use --silent in your script so it's more clear to someone unfamiliar with all the short options for a command.
+In scripts, if a command has short and long options, such as `-s` versus `--silent`, use `--silent` in your script so it's more clear to someone unfamiliar with all the short options for a command.
 
 ## Retrieving remote files
 `curl` tends to be more widely available by default, so use it in preference to `wget`
