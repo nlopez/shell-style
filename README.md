@@ -6,8 +6,9 @@ A collection of best practices and patterns for common tasks.
 bash should be used as the script interpreter, with the shebang line: `#!/usr/bin/env bash`
 Your script should be marked executable (`chmod +x`) when committed to git, and should have a `.sh` extension.
 
-See [this discussion on the pros and cons of using env in the shebang](http://unix.stackexchange.com/a/29620). 
+See [this discussion on the pros and cons of using env in the shebang](http://unix.stackexchange.com/a/29620).
 
+Be aware that some Linux distros may break expectations about even `#!/bin/sh` being what you expect. Ubuntu uses [Dash as `/bin/sh`](https://wiki.ubuntu.com/DashAsBinSh) and some distros might symlink `/bin/sh` to `bash`.  All you typically need to worry about is specifying `sh` when you mean "a [POSIX-compatible](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_title.html) shell and nothing more", and `bash` when you need support for [bash-isms](http://mywiki.wooledge.org/Bashism).
 
 ## shellcheck
 Run the [shellcheck](https://github.com/koalaman/shellcheck) static analysis tool on all you shell scripts. Use a locally installed shellcheck, not the web-based one: `brew install shellcheck; shellcheck /path/to/my.sh`
