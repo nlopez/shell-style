@@ -59,15 +59,15 @@ Some common ones include:
 Use a pattern like this to safely read matching files into a bash array and operate on them:
 
 ```bash
-# fills JARS with an array of results*.txt filenames in /var/db/myapp
-JARS=()
-while read -r -d $'\0' jar; do
-  JARS+=("$jar")
+# fills TXTS with an array of results*.txt filenames in /var/db/myapp
+TXTS=()
+while read -r -d $'\0' txt; do
+  TXTS+=("$txt")
 done < <(find /var/db/myapp -maxdepth 1 -regex ".*/results.*\.txt$" -type f -print0)
 
 # echoing matched files
-for jar in "${JARS[@]}"; do
-  echo "$jar"
+for txt in "${TXTS[@]}"; do
+  echo "$txt"
 done
 ```
 Adjust find parameters as needed, with particular attention to `-maxdepth`, `-regex`, and `-type`.
